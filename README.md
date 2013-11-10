@@ -28,10 +28,10 @@ WordPress plugin to display popular posts, recent posts, recent commets, and tag
 ### Screenshots
 ---
 
-<img src="" alt="Widget settings" />
+<img src="https://raw.github.com/kharissulistiyo/FF-Tab-Widget/master/screenshot-1.png" alt="Widget settings" />
 <p>Widget settings</p>
 
-<img src="" alt="FF Tab Widget" />
+<img src="https://raw.github.com/kharissulistiyo/FF-Tab-Widget/master/screenshot-2.png" alt="FF Tab Widget" />
 <p>FF Tab Widget</p>
 
 
