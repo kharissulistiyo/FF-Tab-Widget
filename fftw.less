@@ -1,0 +1,89 @@
+/*
+* LESS file
+* Main style for FF Tab Widget Plugin
+* Author: Kharis Sulistiyono
+*/
+
+
+// Variables
+
+@tabnav-border:#e6e6e6;
+@tabnav-bg:#f7f7f7;
+
+@pane-bg:#d6eebd;
+@pane-padding:7px;
+
+@item-border:#255a8c;
+@item-border2:#a8bd90;
+
+
+// Mixin
+
+.border-radius(@radius:2px){
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	-ms-border-radius:@radius;
+	-o-border-radius:@radius;
+	border-radius:@radius;
+}
+
+
+.tabs{
+	height: 33px;
+	margin-bottom:0;
+	border-bottom:1px solid @item-border;
+	li{
+		border:1px solid @tabnav-border;
+		border-right:none;
+		background-color:@tabnav-bg;
+		&:last-child{
+			border-right: 1px solid @tabnav-border;	
+		}
+		
+		&.tabs_active{
+			background-color:@item-border;
+			border:1px solid @item-border;
+			border-right:none;			
+			color:#fff;
+		}		
+	}
+}
+
+
+.fftw-panes{
+	background-color:@pane-bg;
+	padding:@pane-padding / 0;
+	padding-top:@pane-padding + 2;
+	
+	.fftw-show-thumbnail{
+		margin-right:@pane-padding;
+		margin-left:@pane-padding;
+		li{
+			border-bottom:1px solid @item-border2;
+			&:last-child{
+				margin-bottom:0;
+				border-bottom:none;
+			}
+		}
+	}
+	
+	.tags{
+		margin-right:@pane-padding;
+		margin-left:@pane-padding;
+		padding-bottom:@pane-padding;
+		a{
+			background-color:@item-border * 1.3;	
+			.border-radius(3px);	
+			padding:3px;
+			color:#fff !important;
+			&:hover{
+				background-color:@item-border;	
+			}
+		}		
+	}
+	
+	a{
+		text-decoration:none;	
+	}
+	
+}

@@ -1,0 +1,61 @@
+/*
+* LESS file
+* Main style for FF Tab Widget Plugin
+* Author: Kharis Sulistiyono
+*/
+.tabs {
+  height: 33px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #255a8c;
+}
+.tabs li {
+  border: 1px solid #e6e6e6;
+  border-right: none;
+  background-color: #f7f7f7;
+}
+.tabs li:last-child {
+  border-right: 1px solid #e6e6e6;
+}
+.tabs li.tabs_active {
+  background-color: #255a8c;
+  border: 1px solid #255a8c;
+  border-right: none;
+  color: #fff;
+}
+.fftw-panes {
+  background-color: #d6eebd;
+  padding: Infinitypx;
+  padding-top: 9px;
+}
+.fftw-panes .fftw-show-thumbnail {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+.fftw-panes .fftw-show-thumbnail li {
+  border-bottom: 1px solid #a8bd90;
+}
+.fftw-panes .fftw-show-thumbnail li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.fftw-panes .tags {
+  margin-right: 7px;
+  margin-left: 7px;
+  padding-bottom: 7px;
+}
+.fftw-panes .tags a {
+  background-color: #3075b6;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  padding: 3px;
+  color: #fff !important;
+}
+.fftw-panes .tags a:hover {
+  background-color: #255a8c;
+}
+.fftw-panes a {
+  text-decoration: none;
+}
