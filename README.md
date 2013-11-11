@@ -43,6 +43,12 @@ Version 0.1
 - Initial release
 
 
+### Download
+---
+
+<a href="http://wordpress.org/plugins/ff-tab-widget/" target="_blank">Download FF Tab Widget plugin</a> from WordPress.org repository
+
+
 ### Credit
 ---
 
