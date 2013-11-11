@@ -48,6 +48,7 @@ Version 0.1
 
 <a href="https://github.com/amazingSurge/jquery-tabs" target="_blank">jquery-tabs.js</a> 
 
+<p>@leoylin, @iejerry, @amazingSurge thanks for building this such cool jQuery Tabs plugin.</p>
 
 ### Notes
 ---
