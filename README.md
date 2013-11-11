@@ -1,4 +1,4 @@
-FF-Tab-Widget
+FF Tab Widget
 =============
 
 Contributor: Kharis Sulistiyono  
@@ -21,7 +21,7 @@ WordPress plugin to display popular posts, recent posts, recent commets, and tag
 1. Download the WP Dropdown Hierarchial Category UI Plugin.
 2. In your WordPress Administration, go to Plugins > Add New > Upload, and select the plugin ZIP file.
 3. Activate the plugin.
-4. Go to Appearance > Widgets > Drag "FF Tab Widget" - then drop in your prefered sidebar area.
+4. Go to Appearance > Widgets > Drag "FF Tab Widget" instance, then drop in your prefered sidebar area.
 5. Fill the widget setting fields.
 6. Click Save, and enjoy!
 
