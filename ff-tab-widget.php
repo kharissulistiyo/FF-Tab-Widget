@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: FF Tab Widget
-Version: 0.1
+Version: 1.1
 Description: Display popular posts, recent posts, recent commets, and tags in an animated tabs in a single widget.
-Author: <a href="http://kharissulistiyo.github.io">Kharis Sulistiyono</a>
-Author URI: http://kharissulistiyo.github.io
+Author: <a href="http://www.kharissulistiyono.com">Kharis Sulistiyono</a>
+Author URI: http://www.kharissulistiyono.com
 Plugin URI: https://github.com/kharissulistiyo/FF-Tab-Widget
 */
 
@@ -13,20 +13,78 @@ Plugin URI: https://github.com/kharissulistiyo/FF-Tab-Widget
 
 /**
  * Front-end scripts
- * @since 0.0.1
+ * @since 0.3
  */
+ 
+ 
+
+/** 
+ * Plugin setting
+ * @since 1.1
+ */
+ 
+require_once('includes/fillpress.php'); 
+ 
+ 
+
+/** 
+* Custom Styles
+* @since 1.1
+*/
+
+ 
+if(!function_exists('fftw_custom_frontend_style')){ 
+	function fftw_custom_frontend_style(){
+?>
+
+<style type="text/css">
+
+/* FFTW Custom Frontend Style*/
+
+.tabs.fftw-nav li{
+	background-color:<?php echo esc_html( get_option( 'fftw_nav_bg' ) ); ?>;
+	color:<?php echo esc_html( get_option( 'fftw_nav_color' ) ); ?>;
+	border:1px solid <?php echo esc_html( get_option( 'fftw_nav_border' ) ); ?>;
+	border-right:none;	
+}
+
+.tabs.fftw-nav li:last-child{
+	border-right:1px solid <?php echo esc_html( get_option( 'fftw_nav_border' ) ); ?> !important;
+}
+
+.tabs.fftw-nav li.tabs_active{
+	border-color:<?php echo esc_html( get_option( 'fftw_nav_border' ) ); ?>;
+	background-color:<?php echo esc_html( get_option( 'fftw_nav_bg_active' ) ); ?>;
+	color:<?php echo esc_html( get_option( 'fftw_nav_color_active' ) ); ?>;
+}
+
+.fftw-panes{
+	background-color:<?php echo esc_html( get_option( 'fftw_pane_bg' ) ); ?>;
+}
+
+.fftw-panes .tags a{
+	background-color:<?php echo esc_html( get_option( 'fftw_nav_border' ) ); ?>;
+}
+
+</style>
+
+<?php }}
+
+add_action('wp_head', 'fftw_custom_frontend_style');
+ 
+ 
 
 if(!function_exists('fftw_enqueue_scripts')){
 
 	function fftw_enqueue_scripts(){
 		
 		// Styles
-		wp_enqueue_style( 'jquery-tabs', plugins_url( 'assets/styles/jquery-tabs.css' , __FILE__ ), false, '0.0.1' );
+		wp_enqueue_style( 'jquery-tabs', plugins_url( 'includes/styles/jquery-tabs.css' , __FILE__ ), false, '0.0.1' );
 		wp_enqueue_style( 'fftw', plugins_url( 'fftw.css' , __FILE__ ), false, '0.0.1' );
 	
 		// JSes
-		wp_register_script('jquery-tabs', plugins_url( 'assets/js/jquery-tabs.js' , __FILE__ ), array('jquery'), '0.3.0', true );
-		wp_register_script('jquery-tabs-init', plugins_url( 'assets/js/jquery-tabs-init.js' , __FILE__ ), array('jquery-tabs'), '0.0.1', true );
+		wp_register_script('jquery-tabs', plugins_url( 'includes/js/jquery-tabs.js' , __FILE__ ), array('jquery'), '0.3.0', true );
+		wp_register_script('jquery-tabs-init', plugins_url( 'includes/js/jquery-tabs-init.js' , __FILE__ ), array('jquery-tabs'), '0.0.1', true );
 		
 		wp_enqueue_script('jquery-tabs');
 		wp_enqueue_script('jquery-tabs-init');
@@ -52,11 +110,6 @@ function register_ff_tab_widget() {
 add_action( 'widgets_init', 'register_ff_tab_widget' );
 
 
-
-/*
- * = Post view count from wpbeginner
- * ======================================= */
-
  
 function fftw_set_post_views($postID) {
     $count_key = 'fftw_post_views_count';
@@ -71,27 +124,7 @@ function fftw_set_post_views($postID) {
     }
 }
 
-//To keep the count accurate, lets get rid of prefetching
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); 
- 
- 
-/* 
-function fftw_get_post_views($postID){
-    $count_key = 'fftw_post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0 View";
-    }
-    return $count.' Views';
-}
-*/ 
- 
-
-/*
- * /= Post view count from wpbeginner
- * ======================================= */
 
 
 
@@ -100,14 +133,16 @@ function fftw_get_post_views($postID){
 /**
  * Add filter to single post
  * @since 0.0.1
+ * updated 1.0
  */
  
 
-function fftw_post_view() {
+function fftw_post_view($content) {
 	if(is_single()){
-		fftw_set_post_views(get_the_ID());
+		$content .= fftw_set_post_views(get_the_ID());
 		// return fftw_get_post_views(get_the_ID());
 	}
+	return $content;
 } 
 
 add_filter( 'the_content', 'fftw_post_view' ); 

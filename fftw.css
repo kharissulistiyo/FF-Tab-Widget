@@ -3,20 +3,23 @@
 * Main style for FF Tab Widget Plugin
 * Author: Kharis Sulistiyono
 */
-.tabs {
+.tabs.fftw-nav {
   height: 33px;
+  margin: 0;
+  padding: 0;
   margin-bottom: 0;
   border-bottom: 1px solid #255a8c;
+  border-bottom: none;
 }
-.tabs li {
+.tabs.fftw-nav li {
   border: 1px solid #e6e6e6;
   border-right: none;
   background-color: #f7f7f7;
 }
-.tabs li:last-child {
+.tabs.fftw-nav li:last-child {
   border-right: 1px solid #e6e6e6;
 }
-.tabs li.tabs_active {
+.tabs.fftw-nav li.tabs_active {
   background-color: #255a8c;
   border: 1px solid #255a8c;
   border-right: none;
@@ -26,6 +29,11 @@
   background-color: #d6eebd;
   padding: Infinitypx;
   padding-top: 9px;
+}
+.fftw-panes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .fftw-panes .fftw-show-thumbnail {
   margin-right: 7px;

@@ -29,24 +29,33 @@
 
 
 .tabs{
-	height: 33px;
-	margin-bottom:0;
-	border-bottom:1px solid @item-border;
-	li{
-		border:1px solid @tabnav-border;
-		border-right:none;
-		background-color:@tabnav-bg;
-		&:last-child{
-			border-right: 1px solid @tabnav-border;	
+
+	&.fftw-nav{
+	
+		height: 33px;
+		margin:0;
+		padding:0;
+		margin-bottom:0;
+		border-bottom:1px solid @item-border;
+		border-bottom:none;
+		li{
+			border:1px solid @tabnav-border;
+			border-right:none;
+			background-color:@tabnav-bg;
+			&:last-child{
+				border-right: 1px solid @tabnav-border;	
+			}
+			
+			&.tabs_active{
+				background-color:@item-border;
+				border:1px solid @item-border;
+				border-right:none;			
+				color:#fff;
+			}		
 		}
-		
-		&.tabs_active{
-			background-color:@item-border;
-			border:1px solid @item-border;
-			border-right:none;			
-			color:#fff;
-		}		
+	
 	}
+	
 }
 
 
@@ -54,6 +63,12 @@
 	background-color:@pane-bg;
 	padding:@pane-padding / 0;
 	padding-top:@pane-padding + 2;
+	
+	ul{
+		list-style:none;
+		padding:0;
+		margin:0;
+	}
 	
 	.fftw-show-thumbnail{
 		margin-right:@pane-padding;
