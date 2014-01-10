@@ -46,6 +46,9 @@ FF doesn't stand for anything.
 <img src="https://raw.github.com/kharissulistiyo/FF-Tab-Widget/master/screenshot-2.png" alt="FF Tab Widget" />
 <p>FF Tab Widget</p>
 
+<img src="https://raw.github.com/kharissulistiyo/FF-Tab-Widget/master/screenshot-3.png" alt="FF Tab Widget Settings" />
+<p>FF Tab Widget Settings</p>
+
 
 ### Changelog
 ---
